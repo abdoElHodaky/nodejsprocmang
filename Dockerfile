@@ -4,4 +4,4 @@ COPY . .
 RUN apk add --no-cache tzdata  sqlite-dev postgresql-dev mysql-dev 
 RUN npm update
 EXPOSE ${PORT}
-CMD ["node","app.js"]
+CMD ["node","./src/app.js"]
