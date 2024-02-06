@@ -7,17 +7,9 @@
     "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/farhanshaikh05/nodejs-procurement-management.git"
-  },
-  "author": "Farhan Shaikh",
+  "author": "abdoElhodaky",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/farhanshaikh05/nodejs-procurement-management/issues"
-  },
-  "homepage": "https://github.com/farhanshaikh05/nodejs-procurement-management#readme",
-  "dependencies": {
+   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "compression": "^1.7.4",
