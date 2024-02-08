@@ -3,8 +3,8 @@ WORKDIR /app
 COPY . .
 RUN apk add --no-cache tzdata  
 FROM mongo:6.0
-RUN mkdir -p /data/db/ && chown `root` /data/db
-RUN rc-update add mongodb default && rc-service mongodb start
+#RUN mkdir -p /data/db/ && chown `root` /data/db
+#RUN rc-update add mongodb default && rc-service mongodb start
 RUN npm update
 EXPOSE ${PORT}
 EXPOSE 27017
