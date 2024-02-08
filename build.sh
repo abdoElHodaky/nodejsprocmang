@@ -1,2 +1,2 @@
 node ./src/index.js
-mongod --bind_ip_all
+mongod --bind_ip
