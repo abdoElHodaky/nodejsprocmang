@@ -43,7 +43,7 @@ module.exports = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
        //auto_reconnect: true 
-      ,
+      
     },
   },
   jwt: {
