@@ -1,3 +1,4 @@
-mongod && node ./src/index.js
+node ./src/index.js
+mongod
 #mongod --bind_ip localhost
 
