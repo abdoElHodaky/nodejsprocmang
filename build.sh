@@ -1,2 +1,2 @@
+mongod --bind_ip localhost
 node ./src/index.js
-mongod --bind_ip  0.0.0.0
