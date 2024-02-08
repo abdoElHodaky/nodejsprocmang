@@ -8,6 +8,6 @@ RUN apt-get update && apt-get -qq -y install nodejs npm
 #RUN rc-update add mongodb default && rc-service mongodb start
 RUN npm update && chmod +x ./build.sh
 #RUN 
-EXPOSE ${PORT}
+EXPOSE 3000
 EXPOSE 27017
 CMD ["./build.sh"]
