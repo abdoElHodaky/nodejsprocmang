@@ -42,7 +42,8 @@ module.exports = {
       // useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
-       auto_reconnect: true ,
+       //auto_reconnect: true 
+      ,
     },
   },
   jwt: {
