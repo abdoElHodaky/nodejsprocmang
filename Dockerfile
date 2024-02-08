@@ -1,7 +1,7 @@
 FROM node:16-alpine3.16
 WORKDIR /app
 COPY . .
-RUN apk add --no-cache tzdata mongodb mongodb-tools   
+RUN apk add --no-cache tzdata mongodb  
 RUN mkdir -p /data/db/ && chown `root` /data/db
 RUN rc-update add mongodb default && rc-service mongodb start
 RUN npm update
