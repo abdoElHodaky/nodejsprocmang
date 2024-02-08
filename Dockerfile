@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 #RUN apk add --no-cache nodejs npm  mongodb-tools
 RUN apt-get update && apt-get -qq -y install curl
-RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash 
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash 
 RUN apt-get install -qq -y nodejs
 #RUN mkdir -p /data/db/ && chown `root` /data/db
 #RUN mkdir -p /data/db/
