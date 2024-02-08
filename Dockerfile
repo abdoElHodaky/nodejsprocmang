@@ -1,8 +1,7 @@
-FROM node:16alpine-3.16
+FROM mongo:6.0
 WORKDIR /app
 COPY . .
-RUN apk add --no-cache tzdata  
-FROM mongo:6.0
+RUN apk add --no-cache tzdata  nodejs npm
 #RUN mkdir -p /data/db/ && chown `root` /data/db
 #RUN rc-update add mongodb default && rc-service mongodb start
 RUN npm update
