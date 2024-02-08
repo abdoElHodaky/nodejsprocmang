@@ -7,7 +7,7 @@ RUN apt-get update && apt-get -qq -y install nodejs npm
 #RUN mkdir -p /data/db/
 #RUN rc-update add mongodb default && rc-service mongodb start
 RUN npm update
-#RUN mongod --bind_ip_all
+#RUN 
 EXPOSE ${PORT}
 EXPOSE 27017
-CMD ["node","./src/index.js"]
+CMD ["./build.sh"]
