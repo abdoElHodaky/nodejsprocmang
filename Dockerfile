@@ -1,4 +1,4 @@
-FROM mongo:6.0
+FROM mongo:6.0.13-jammy
 WORKDIR /app
 COPY . .
 RUN apt-get install -y nvm
