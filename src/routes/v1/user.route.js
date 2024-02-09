@@ -4,14 +4,14 @@ const validate = require('../../middlewares/validate');
 const userValidation = require('../../validations/user.validation');
 const userController = require('../../controllers/user.controller');
 
-const router = express.Router();
+const userRoute = express.Router();
 
-router
+userRoute
   .route('/')
   .post(auth('manageUsers'), validate(userValidation.createUser), userController.createUser)
   .get(auth('getUsers'), validate(userValidation.getUsers), userController.getUsers);
 
-router
+userRoute
   .route('/inspection/assign')
   .post(auth('manageAssign'), validate(userValidation.assignInspectionUser), userController.assignInspectionUser);
 
@@ -21,4 +21,4 @@ router
 //   .patch(auth('manageUsers'), validate(userValidation.updateUser), userController.updateUser)
 //   .delete(auth('manageUsers'), validate(userValidation.deleteUser), userController.deleteUser);
 
-module.exports = router;
+module.exports = userRoute;
