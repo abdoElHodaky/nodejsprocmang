@@ -6,7 +6,7 @@ const auth = require('../../middlewares/auth');
 
 const authRoute = express.Router();
 
-authRoute.post('auth/login', validate(authValidation.login), authController.login);
-authRoute.post('auth/logout', validate(authValidation.logout), authController.logout);
+authRoute.post('/auth/login', validate(authValidation.login), authController.login);
+authRoute.post('/auth/logout', validate(authValidation.logout), authController.logout);
 
 module.exports = authRoute;
