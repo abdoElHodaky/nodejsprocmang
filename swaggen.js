@@ -11,7 +11,7 @@ const config = {
     host: '',
     schemes: [],
     basePath: '/v1/',
-    security: [ { bearerAuth: [] } ,
+    security: [ { bearerAuth: [] } ],
 };
 
 swaggerAutogen(outputFile, endpointsFiles, config);
