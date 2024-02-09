@@ -22,5 +22,5 @@ router.get(
   swaggerUi.setup(specs)
 );
 */
-router.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
+router.use('', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
 module.exports = router;
