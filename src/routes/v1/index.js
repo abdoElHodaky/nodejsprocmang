@@ -25,10 +25,6 @@ const defaultRoutes = [
     path: '/order',
     route: orderRoute,
   },
-  {
-    path:'/docs',
-    route:docsRoute
-  },
 
 ];
 
