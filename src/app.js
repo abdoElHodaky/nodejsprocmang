@@ -15,6 +15,8 @@ const routes = require('./routes/v1');
 const { errorConverter, errorHandler } = require('./middlewares/error');
 const ApiError = require('./utils/ApiError');
 const fileupload = require('express-fileupload');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDefinition = require('./src/swagger');
 
 const app = express();
 
@@ -59,8 +61,9 @@ passport.use('jwt', jwtStrategy);
 
 // v1 api routes
 app.use('/v1', routes);
+
 app.get("/",(req,res)=>{
-  res.redirect("/v1/docs")
+  res.redirect("/docs")
 })
 // send back a 404 error for any unknown api request
 app.use((req, res, next) => {
@@ -72,5 +75,5 @@ app.use(errorConverter);
 
 // handle error
 app.use(errorHandler);
-
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
 module.exports = app;
