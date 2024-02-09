@@ -61,7 +61,7 @@ app.use(passport.initialize());
 passport.use('jwt', jwtStrategy);
 
 // v1 api routes
-app.use('/v1', routes);
+app.use('/v1/', routes);
 app.get("/",(req,res)=>{
   res.redirect("docs")
 })
