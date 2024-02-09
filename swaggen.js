@@ -10,7 +10,7 @@ const config = {
     tags: [ ],
     host: '',
     schemes: [],
-    basePath: '/v1',
+    basePath: '/v1/',
     security: [ { bearerAuth: [] } ,
 };
 
