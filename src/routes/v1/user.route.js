@@ -7,12 +7,12 @@ const userController = require('../../controllers/user.controller');
 const userRoute = express.Router();
 
 userRoute
-  .route('users/')
+  .route('/users/')
   .post(auth('manageUsers'), validate(userValidation.createUser), userController.createUser)
   .get(auth('getUsers'), validate(userValidation.getUsers), userController.getUsers);
 
 userRoute
-  .route('users/inspection/assign')
+  .route('/users/inspection/assign')
   .post(auth('manageAssign'), validate(userValidation.assignInspectionUser), userController.assignInspectionUser);
 
 // router
