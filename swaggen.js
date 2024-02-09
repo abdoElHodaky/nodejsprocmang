@@ -10,6 +10,7 @@ const config = {
     tags: [ ],
     host: '',
     schemes: [],
+    basePath: '/v1'
 };
 
 swaggerAutogen(outputFile, endpointsFiles, config);
