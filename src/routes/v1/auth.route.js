@@ -4,9 +4,9 @@ const authValidation = require('../../validations/auth.validation');
 const authController = require('../../controllers/auth.controller');
 const auth = require('../../middlewares/auth');
 
-const router = express.Router();
+const authRoute = express.Router();
 
-router.post('/login', validate(authValidation.login), authController.login);
-router.post('/logout', validate(authValidation.logout), authController.logout);
+authRoute.post('/login', validate(authValidation.login), authController.login);
+authRoute.post('/logout', validate(authValidation.logout), authController.logout);
 
-module.exports = router;
+module.exports = authRoute;
