@@ -7,13 +7,13 @@ const checklistController = require('../../controllers/checklist.controller');
 const checklistRoute = express.Router();
 
 checklistRoute
-  .route('/')
+  .route('checklist/')
   .post(auth('manageChecklist'), validate(checklistValidation.createChecklist), checklistController.createChecklist)
   .get(auth(), checklistController.getChecklist);
 
 
 checklistRoute
-  .route('/:checklistId')
+  .route('checklist/:checklistId')
   .put(auth(), validate(checklistValidation.fillChecklist), checklistController.fillChecklist);
 
 module.exports = checklistRoute;
