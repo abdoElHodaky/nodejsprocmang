@@ -75,5 +75,5 @@ app.use(errorConverter);
 
 // handle error
 app.use(errorHandler);
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
+app.use('docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
 module.exports = app;
