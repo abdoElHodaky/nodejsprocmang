@@ -24,6 +24,7 @@ if (config.env !== 'test') {
   app.use(morgan.successHandler);
   app.use(morgan.errorHandler);
 }
+app.use('docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
 
 // set security HTTP headers
 app.use(helmet());
@@ -61,8 +62,6 @@ passport.use('jwt', jwtStrategy);
 
 // v1 api routes
 app.use('/v1', routes);
-app.use('docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
-
 app.get("/",(req,res)=>{
   res.redirect("/docs")
 })
