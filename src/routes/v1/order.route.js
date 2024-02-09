@@ -4,15 +4,15 @@ const validate = require('../../middlewares/validate');
 const orderValidation = require('../../validations/order.validation');
 const orderController = require('../../controllers/order.controller');
 
-const router = express.Router();
+const orderRoute = express.Router();
 
-router
+orderRoute
   .route('/')
   .post(auth('manageOrder'), validate(orderValidation.createOrder), orderController.createOrder)
   .get(auth(), orderController.getOrders);
 
-router
+orderRoute
 .route('/:orderId')
 .patch(auth('manageOrder'), validate(orderValidation.createOrder), orderController.updateOrder);
 
-module.exports = router;
+module.exports = orderRoute;
