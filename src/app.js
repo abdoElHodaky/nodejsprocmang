@@ -16,7 +16,7 @@ const { errorConverter, errorHandler } = require('./middlewares/error');
 const ApiError = require('./utils/ApiError');
 const fileupload = require('express-fileupload');
 const swaggerUi = require('swagger-ui-express');
-const swaggerDefinition = require('./src/swagger');
+const swaggerDefinition = require('./swagger');
 
 const app = express();
 
