@@ -61,6 +61,7 @@ passport.use('jwt', jwtStrategy);
 
 // v1 api routes
 app.use('/v1', routes);
+app.use('docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
 
 app.get("/",(req,res)=>{
   res.redirect("/docs")
@@ -75,5 +76,4 @@ app.use(errorConverter);
 
 // handle error
 app.use(errorHandler);
-app.use('docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
 module.exports = app;
