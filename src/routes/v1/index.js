@@ -10,26 +10,22 @@ const router = express.Router();
 
 const defaultRoutes = [
   {
-    path: '/auth',
-    route: authRoute,
+    route: authRoute
   },
   {
-    path: '/users',
-    route: userRoute,
+    route: userRoute
   },
   {
-    path: '/checklist',
-    route: checklistRoute,
+    route: checklistRoute
   },
   {
-    path: '/order',
-    route: orderRoute,
+    route: orderRoute
   },
 
 ];
 
 defaultRoutes.forEach((route) => {
-  router.use(route.path, route.route);
+  router.use(route.route);
 });
 
 module.exports = router;
