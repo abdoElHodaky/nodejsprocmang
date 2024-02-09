@@ -4,16 +4,16 @@ const validate = require('../../middlewares/validate');
 const checklistValidation = require('../../validations/checklist.validation');
 const checklistController = require('../../controllers/checklist.controller');
 
-const router = express.Router();
+const checklistRoute = express.Router();
 
-router
+checklistRoute
   .route('/')
   .post(auth('manageChecklist'), validate(checklistValidation.createChecklist), checklistController.createChecklist)
   .get(auth(), checklistController.getChecklist);
 
 
-router
+checklistRoute
   .route('/:checklistId')
   .put(auth(), validate(checklistValidation.fillChecklist), checklistController.fillChecklist);
 
-module.exports = router;
+module.exports = checklistRoute;
