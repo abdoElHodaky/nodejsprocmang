@@ -7,12 +7,12 @@ const orderController = require('../../controllers/order.controller');
 const orderRoute = express.Router();
 
 orderRoute
-  .route('orders/')
+  .route('/orders/')
   .post(auth('manageOrder'), validate(orderValidation.createOrder), orderController.createOrder)
   .get(auth(), orderController.getOrders);
 
 orderRoute
-.route('orders/:orderId')
+.route('/orders/:orderId')
 .patch(auth('manageOrder'), validate(orderValidation.createOrder), orderController.updateOrder);
 
 module.exports = orderRoute;
