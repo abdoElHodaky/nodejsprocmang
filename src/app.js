@@ -17,6 +17,8 @@ const ApiError = require('./utils/ApiError');
 const fileupload = require('express-fileupload');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDefinition = require('./swagger');
+const { SwaggerTheme, SwaggerThemeNameEnum } = require('swagger-themes');
+const theme = new SwaggerTheme();
 
 const app = express();
 
@@ -24,7 +26,10 @@ if (config.env !== 'test') {
   app.use(morgan.successHandler);
   app.use(morgan.errorHandler);
 }
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition,{
+  customCss:theme.getBuffer(SwaggerThemeNameEnum.UniversalDark),
+  
+}));
 
 // set security HTTP headers
 app.use(helmet());
