@@ -1,4 +1,4 @@
-const swaggerAutogen = require('swagger-autogen')();
+const swaggerAutogen = require('swagger-autogen')({ openapi: '3.0.0'});
 
 const outputFile = './src/swagger.json';
 const endpointsFiles = ['./src/routes/v1/*.route.js']
@@ -16,12 +16,22 @@ const config = {
         },
         {
             name:"Checklist",description:""
+        },
+        {
+            name:"User",description:""
         }
     ],
     host: '',
     schemes: [],
     basePath: '/v1/',
-    security: [{Authorization: []}],
+    components: {
+        securitySchemes:{
+            JWTAUTH: {
+                type: 'http',
+                scheme: 'bearer'
+            }
+        }
+    }
 };
 
 swaggerAutogen(outputFile, endpointsFiles, config);
