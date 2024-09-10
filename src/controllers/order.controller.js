@@ -7,6 +7,9 @@ const { orderService } = require('../services');
 const createOrder = catchAsync(async (req, res) => {
   /*
    #swagger.tags=["Order"]
+   #swagger.security = [{
+            "JWTAUTH": []
+    }] 
   */
   const order = await orderService.createOrder(req.body, req.user);
 
@@ -16,6 +19,9 @@ const createOrder = catchAsync(async (req, res) => {
 const getOrders = catchAsync(async (req, res) => { 
  /*
    #swagger.tags=["Order"]
+   #swagger.security = [{
+            "JWTAUTH": []
+    }] 
   */
 
 
@@ -29,6 +35,9 @@ const getOrders = catchAsync(async (req, res) => {
 const updateOrder = catchAsync(async (req, res) => {
   /*
    #swagger.tags=["Order"]
+   #swagger.security = [{
+            "JWTAUTH": []
+    }] 
   */
   await orderService.updateOrder(req.params.orderId, req.body);
 
