@@ -27,7 +27,7 @@ if (config.env !== 'test') {
   app.use(morgan.errorHandler);
 }
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDefinition,{
-  customCss:theme.getBuffer(SwaggerThemeNameEnum.UniversalDark),
+  customCss:theme.getBuffer(SwaggerThemeNameEnum.FLATTOP),
   
 }));
 
