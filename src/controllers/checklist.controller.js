@@ -5,12 +5,20 @@ const catchAsync = require('../utils/catchAsync');
 const { checklistService } = require('../services');
 
 const createChecklist = catchAsync(async (req, res) => {
+  /*
+   #swagger.tags=["Checklist"]
+  */
   const checklist = await checklistService.createChecklist(req.body, req.user);
 
   return res.status(httpStatus.CREATED).send(checklist);
 });
 
 const getChecklist = catchAsync(async (req, res) => {
+ /*
+   #swagger.tags=["Checklist"]
+  */
+
+
   const filter = pick(req.query, ['name']);
   const options = pick(req.query, ['sortBy', 'limit', 'page']);
 
@@ -19,6 +27,9 @@ const getChecklist = catchAsync(async (req, res) => {
 });
 
 const fillChecklist = catchAsync(async (req, res) => {
+  /*
+   #swagger.tags=["Checklist"]
+  */
   await checklistService.fillChecklist(req.params.checklistId,req.body, req.user);
   
   res.status(httpStatus.OK).send({
