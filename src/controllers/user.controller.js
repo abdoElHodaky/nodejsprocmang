@@ -5,6 +5,12 @@ const catchAsync = require('../utils/catchAsync');
 const { userService } = require('../services');
 
 const createUser = catchAsync(async (req, res) => {
+  /*
+  #swagger.tags=["User"]
+  #swagger.security = [{
+            "JWTAUTH": []
+    }] 
+  */
   if (req.user.role == 'procurement') {
     if (req.body.role == 'procurement') {
       throw new ApiError(httpStatus.FORBIDDEN, 'Not Allowed to add procurement-manager!');
@@ -15,6 +21,12 @@ const createUser = catchAsync(async (req, res) => {
 });
 
 const getUsers = catchAsync(async (req, res) => {
+  /*
+  #swagger.tags=["User"]
+  #swagger.security = [{
+            "JWTAUTH": []
+    }] 
+  */
   // const filter = pick(req.query, ['name', 'role']);
   const options = pick(req.query, ['sortBy', 'limit', 'page']);
   let filter = {}, roles = [];
@@ -33,6 +45,12 @@ const getUsers = catchAsync(async (req, res) => {
 });
 
 const getUser = catchAsync(async (req, res) => {
+  /*
+  #swagger.tags=["User"]
+  #swagger.security = [{
+            "JWTAUTH": []
+    }] 
+  */
   const user = await userService.getUserById(req.params.userId);
   if (!user) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
@@ -41,16 +59,34 @@ const getUser = catchAsync(async (req, res) => {
 });
 
 const updateUser = catchAsync(async (req, res) => {
+  /*
+  #swagger.tags=["User"]
+  #swagger.security = [{
+            "JWTAUTH": []
+    }] 
+  */
   const user = await userService.updateUserById(req.params.userId, req.body);
   res.send(user);
 });
 
 const deleteUser = catchAsync(async (req, res) => {
+  /*
+  #swagger.tags=["User"]
+  #swagger.security = [{
+            "JWTAUTH": []
+    }] 
+  */
   await userService.deleteUserById(req.params.userId);
   res.status(httpStatus.NO_CONTENT).send();
 });
 
 const assignInspectionUser = catchAsync(async (req, res) => {
+  /*
+  #swagger.tags=["User"]
+  #swagger.security = [{
+            "JWTAUTH": []
+    }] 
+  */
   const inspectionAssign = await userService.assignInspection(req.body);
   res.status(httpStatus.CREATED).send(inspectionAssign);
 });
