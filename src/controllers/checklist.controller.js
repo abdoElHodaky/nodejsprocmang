@@ -7,6 +7,9 @@ const { checklistService } = require('../services');
 const createChecklist = catchAsync(async (req, res) => {
   /*
    #swagger.tags=["Checklist"]
+   #swagger.security = [{
+            "JWTAUTH": []
+    }] 
   */
   const checklist = await checklistService.createChecklist(req.body, req.user);
 
@@ -16,6 +19,9 @@ const createChecklist = catchAsync(async (req, res) => {
 const getChecklist = catchAsync(async (req, res) => {
  /*
    #swagger.tags=["Checklist"]
+   #swagger.security = [{
+            "JWTAUTH": []
+    }] 
   */
 
 
@@ -29,6 +35,9 @@ const getChecklist = catchAsync(async (req, res) => {
 const fillChecklist = catchAsync(async (req, res) => {
   /*
    #swagger.tags=["Checklist"]
+   #swagger.security = [{
+            "JWTAUTH": []
+    }] 
   */
   await checklistService.fillChecklist(req.params.checklistId,req.body, req.user);
   
