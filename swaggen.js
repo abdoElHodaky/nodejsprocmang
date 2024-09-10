@@ -7,7 +7,17 @@ const config = {
         title: 'procurement',
         description: '',
     },
-    tags: [ ],
+    tags: [
+        {
+            name:"Authentication",description:""
+        },
+        {
+            name:"Order",description:""
+        },
+        {
+            name:"Checklist",description:""
+        }
+    ],
     host: '',
     schemes: [],
     basePath: '/v1/',
