@@ -5,12 +5,20 @@ const catchAsync = require('../utils/catchAsync');
 const { orderService } = require('../services');
 
 const createOrder = catchAsync(async (req, res) => {
+  /*
+   #swagger.tags=["Order"]
+  */
   const order = await orderService.createOrder(req.body, req.user);
 
   return res.status(httpStatus.CREATED).send(order);
 });
 
-const getOrders = catchAsync(async (req, res) => {
+const getOrders = catchAsync(async (req, res) => { 
+ /*
+   #swagger.tags=["Order"]
+  */
+
+
   const filter = pick(req.query, ['name', 'role']);
   const options = pick(req.query, ['sortBy', 'limit', 'page']);
 
@@ -19,6 +27,9 @@ const getOrders = catchAsync(async (req, res) => {
 });
 
 const updateOrder = catchAsync(async (req, res) => {
+  /*
+   #swagger.tags=["Order"]
+  */
   await orderService.updateOrder(req.params.orderId, req.body);
 
   return res.status(httpStatus.OK).send({
