@@ -3,6 +3,9 @@ const catchAsync = require('../utils/catchAsync');
 const { authService, tokenService } = require('../services');
 
 const login = catchAsync(async (req, res) => {
+  /*
+   #swagger.tags=["Authentication"]
+  */
   const { email, password, phone, type } = req.body;
   let user;
   
@@ -18,6 +21,10 @@ const login = catchAsync(async (req, res) => {
 });
 
 const logout = catchAsync(async (req, res) => {
+  /*
+   #swagger.tags=["Authentication"]
+  */
+  
   await authService.logout(req.body.refreshToken);
   res.status(httpStatus.NO_CONTENT).send();
 });
